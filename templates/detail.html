@@ -1,0 +1,28 @@
+{% extends 'app.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row justify-content-md-center mt-5">
+    <div class="col-md-auto">
+        <div class="card mb-3">
+            <img src="{{movie.img.url}}" class="card-img-top" alt="" height="400px">
+            <div class="card-body">
+                <h5 class="card-title">{{movie.name}}</h5>
+                <p class="card-text">{{movie.desc}}</p>
+                <a href="{% url 'movieapp:update' movie.id %}" class="btn btn-primary">Update</a>
+                <a href="{% url 'movieapp:delete' movie.id %}" class="btn btn-primary">Delete</a>
+            </div>
+            <div class="card-footer">
+                <p class="card-text"><small class="text-muted">Released in {{movie.year}}</small></p>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+</div>
+   
+
+
+{% endblock  %}
+    
